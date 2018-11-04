@@ -19,6 +19,10 @@ class EmojiArtDocumentTableViewController: UITableViewController {
         return 1
     }
     
+    @IBAction func newEmojiArt(_ sender: UIBarButtonItem) {
+        emojiArtDocuments += ["Untitled".madeUnique(withRespectTo: emojiArtDocuments)]
+        tableView.reloadData()
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emojiArtDocuments.count
     }
@@ -27,7 +31,8 @@ class EmojiArtDocumentTableViewController: UITableViewController {
     //TODO : 이상하게, Table View Cell 안에 Text 값을 읽지 못하고, 덮어 쓰는 문제가 있었음. 지금은 TextLabel을 지웠더니 정상동작함. 수정 방법 찾기
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentCell", for: indexPath)
-
+        print(cell.textLabel?.text)
+        print("yeah")
         cell.textLabel?.text = emojiArtDocuments[indexPath.row]
         
         return cell

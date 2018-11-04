@@ -71,7 +71,13 @@
                             <outlet property="delegate" destination="OkP-GZ-H0J" id="Ivg-4F-CyQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="al7-Jw-vrS"/>
+                    <navigationItem key="navigationItem" id="al7-Jw-vrS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oIf-Q3-y8f">
+                            <connections>
+                                <action selector="newEmojiArt:" destination="OkP-GZ-H0J" id="RzN-Ee-3xG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IW-8W-cuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
