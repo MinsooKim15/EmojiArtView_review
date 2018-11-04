@@ -8,8 +8,19 @@
 
 import UIKit
 
-class EmojiArtView: UIView {
+class EmojiArtView: UIView, UIDropInteractionDelegate {
 
+    override init(frame: CGRect) {
+        super.init(frame:frame)
+        setup()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    private func setup(){
+        addInteraction(UIDropInteraction(delegate: self))
+    }
     
     var backGroundImage: UIImage? {didSet{setNeedsDisplay()}}
     override func draw(_ rect: CGRect){
